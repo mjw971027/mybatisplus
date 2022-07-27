@@ -35,15 +35,15 @@ public class WskCode {
         //2、设置数据源
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUsername("root");
-        dsc.setPassword("root");
-        dsc.setUrl("jdbc:mysql://localhost:3306/wuye?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8");
+        dsc.setPassword("19971027");
+        dsc.setUrl("jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
         //3、包的配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName("study");
-        pc.setParent("com.wsk");
+        pc.setModuleName("demo");
+        pc.setParent("com.example");
         pc.setEntity("pojo");
         pc.setMapper("mapper");
         pc.setService("service");
@@ -51,7 +51,7 @@ public class WskCode {
         mpg.setPackageInfo(pc);
         //4、策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("admin","danyuan","building","room");//设置要映射的表名,只需改这里即可
+        strategy.setInclude("count","countrys","n-title","user");//设置要映射的表名,只需改这里即可
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setEntityLombokModel(true);//是否使用lombok开启注解
